@@ -1,9 +1,9 @@
 ﻿Imports System.IO
-Public Class TaxFolderGenerator
-    Private Sub TaxFolderGenerator_Load(sender As Object, e As EventArgs) Handles Me.Load
+Public Class AppFolderGenerator
+    Private Sub AppFolderGenerator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtSourceLocation.Text = GetDocLocation()
 
-        Call GetYears()
+        'GetYears()
 
     End Sub
 
@@ -16,32 +16,32 @@ Public Class TaxFolderGenerator
 
     End Function
 
-    Sub GetYears()
+    'Sub GetYears()
 
-        Try
-            Dim nowYear As Integer = Date.Now.Year
-            Dim StartYear As Integer
-            Dim MaxYear As Integer
+    '    Try
+    '        Dim nowYear As Integer = Date.Now.Year
+    '        Dim StartYear As Integer
+    '        Dim MaxYear As Integer
 
-            StartYear = nowYear - 3
-            MaxYear = StartYear + 6
+    '        StartYear = nowYear - 3
+    '        MaxYear = StartYear + 6
 
-            While StartYear <= MaxYear
-                LstYears.Items.Add(StartYear)
-                StartYear += 1
-            End While
-            LstYears.SelectedIndex = 3 ' DEFAULTS TO CURRENT YEAR
-        Catch ex As Exception
-            MessageBox.Show("test" & vbCrLf & ex.Message, "Error with dates")
-        End Try
+    '        While StartYear <= MaxYear
+    '            LstYears.Items.Add(StartYear)
+    '            StartYear += 1
+    '        End While
+    '        LstYears.SelectedIndex = 3 ' DEFAULTS TO CURRENT YEAR
+    '    Catch ex As Exception
+    '        MessageBox.Show("test" & vbCrLf & ex.Message, "Error with dates")
+    '    End Try
 
-    End Sub
+    'End Sub
 
     Private Sub BtnDefaults_Click(sender As Object, e As EventArgs) Handles BtnDefaults.Click
         TxtSourceLocation.Text = GetDocLocation()
-        LstYears.Items.Clear()
-        Call GetYears()
-        LstYears.SelectedIndex = 3
+        'LstYears.Items.Clear()
+        'Call GetYears()
+        'LstYears.SelectedIndex = 3
     End Sub
 
     Private Sub BtnSelectSource_Click(sender As Object, e As EventArgs) Handles BtnSelectSource.Click
@@ -55,19 +55,19 @@ Public Class TaxFolderGenerator
 
     Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles BtnGenerate.Click
         'MessageBox.Show(LstYears.SelectedItem)
-        Dim FullPath = Path.Combine(TxtSourceLocation.Text, "TaxReturns", LstYears.SelectedItem)
+        Dim FullPath = TxtSourceLocation.Text
         'If IO.Directory.Exists(FullPath) = True Then
         'MessageBox.Show("That folder already exists")
         'Exit Sub
         'Else
         Try
-            IO.Directory.CreateDirectory(FullPath)
-            IO.Directory.CreateDirectory(FullPath & "\DataFiles")
-            IO.Directory.CreateDirectory(FullPath & "\MiscFiles")
-            IO.Directory.CreateDirectory(FullPath & "\NetFile")
-            IO.Directory.CreateDirectory(FullPath & "\PDF")
+            'IO.Directory.CreateDirectory(FullPath)
+            IO.Directory.CreateDirectory(FullPath & "\Forms")
+            IO.Directory.CreateDirectory(FullPath & "\Images")
+            IO.Directory.CreateDirectory(FullPath & "\Modules")
+            IO.Directory.CreateDirectory(FullPath & "\SrcFiles")
 
-            MessageBox.Show("Folders created successfully." & vbCrLf & "You're now ready to start the " & LstYears.SelectedItem & " tax year.", "Aye, Captain...")
+            MessageBox.Show("Folders created successfully." & vbCrLf & "You're now ready to start developing in " & FullPath, "Aye, Captain...")
 
         Catch ex As Exception
             MessageBox.Show("Error creating folder " & FullPath & vbCrLf & ex.Message)

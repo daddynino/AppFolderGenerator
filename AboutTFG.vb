@@ -4,7 +4,7 @@
         ' Set the title of the form.
         Dim ApplicationTitle As String
         If My.Application.Info.Title <> "" Then
-            ApplicationTitle = "Tax Folder Generator" 'My.Application.Info.Title
+            ApplicationTitle = "App Folder Generator" 'My.Application.Info.Title
         Else
             ApplicationTitle = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
         End If
@@ -12,9 +12,9 @@
         ' Initialize all of the text displayed on the About Box.
         ' TODO: Customize the application's assembly information in the "Application" pane of the project 
         '    properties dialog (under the "Project" menu).
-        Me.LabelProductName.Text = "Tax Folder Generator" ' My.Application.Info.ProductName
+        Me.LabelProductName.Text = "App Folder Generator" ' My.Application.Info.ProductName
         Me.LabelVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
-        Me.LabelCopyright.Text = "© 2021 Neil Saunders" ' & My.Application.Info.Copyright
+        Me.LabelCopyright.Text = "© 2024 Neil Saunders" ' & My.Application.Info.Copyright
         Me.LabelCompanyName.Text = "" '"N/A" 'My.Application.Info.CompanyName
         Me.TextBoxDescription.Text = My.Application.Info.Description
     End Sub
@@ -23,7 +23,7 @@
         Me.Close()
     End Sub
 
-    Private Sub TextBoxDescription_TextChanged(sender As Object, e As EventArgs) Handles TextBoxDescription.TextChanged
+    'Private Sub TextBoxDescription_TextChanged(sender As Object, e As EventArgs) Handles TextBoxDescription.TextChanged
 
-    End Sub
+    'End Sub
 End Class

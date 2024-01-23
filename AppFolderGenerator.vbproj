@@ -2,13 +2,21 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
-    <RootNamespace>TaxFolderGenerator</RootNamespace>
-    <StartupObject>TaxFolderGenerator.TaxFolderGenerator</StartupObject>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <RootNamespace>AppFolderGenerator</RootNamespace>
+    <StartupObject>AppFolderGenerator.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <Authors>Neil Saunders</Authors>
-    <Description>Simple app for creating folders to help organize tax files for Canadians. Licensed under the MIT License.</Description>
+    <Description>Quickly generate subfolders for new app development</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <ItemGroup>

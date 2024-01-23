@@ -2,7 +2,7 @@
 Option Explicit On
 
 'This constant indicates whether the Application Framework is in use.
-#Const APPLICATION_FRAMEWORK = True
+#Const APPLICATION_FRAMEWORK = False
 
 #If APPLICATION_FRAMEWORK Then
 
