@@ -62,6 +62,7 @@ Public Class AppFolderGenerator
         'Else
         Try
             'IO.Directory.CreateDirectory(FullPath)
+            IO.Directory.CreateDirectory(FullPath & "\Data")
             IO.Directory.CreateDirectory(FullPath & "\Forms")
             IO.Directory.CreateDirectory(FullPath & "\Images")
             IO.Directory.CreateDirectory(FullPath & "\Modules")
