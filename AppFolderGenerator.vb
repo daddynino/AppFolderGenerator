@@ -3,7 +3,7 @@ Public Class AppFolderGenerator
     Private Sub AppFolderGenerator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtSourceLocation.Text = GetDocLocation()
 
-        'GetYears()
+
 
     End Sub
 
@@ -32,27 +32,6 @@ Public Class AppFolderGenerator
             Return String.Empty ' Or throw an exception, depending on your requirements
         End Try
     End Function
-
-    'Sub GetYears()
-
-    '    Try
-    '        Dim nowYear As Integer = Date.Now.Year
-    '        Dim StartYear As Integer
-    '        Dim MaxYear As Integer
-
-    '        StartYear = nowYear - 3
-    '        MaxYear = StartYear + 6
-
-    '        While StartYear <= MaxYear
-    '            LstYears.Items.Add(StartYear)
-    '            StartYear += 1
-    '        End While
-    '        LstYears.SelectedIndex = 3 ' DEFAULTS TO CURRENT YEAR
-    '    Catch ex As Exception
-    '        MessageBox.Show("test" & vbCrLf & ex.Message, "Error with dates")
-    '    End Try
-
-    'End Sub
 
     Private Sub BtnDefaults_Click(sender As Object, e As EventArgs) Handles BtnDefaults.Click
         Try
@@ -95,6 +74,10 @@ Public Class AppFolderGenerator
 
             If Not Directory.Exists(FullPath & "\Forms") Then
                 IO.Directory.CreateDirectory(FullPath & "\Forms")
+            End If
+
+            If Not Directory.Exists(FullPath & "\Icons") Then
+                IO.Directory.CreateDirectory(FullPath & "\Icons")
             End If
 
             If Not Directory.Exists(FullPath & "\Images") Then
