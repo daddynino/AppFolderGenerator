@@ -9,6 +9,13 @@
     <MyType>WindowsForms</MyType>
     <Authors>Neil Saunders</Authors>
     <Description>Quickly generate subfolders for new app development</Description>
+    <Title>App Folder Generator</Title>
+    <Version>1.1.0</Version>
+    <Product>App Folder Generator</Product>
+    <Copyright>© 2024 Neil Saunders</Copyright>
+    <RepositoryUrl>https://github.com/daddynino/AppFolderGenerator</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

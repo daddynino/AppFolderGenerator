@@ -1,9 +1,9 @@
 ﻿Imports System.IO
+
 Public Class AppFolderGenerator
+
     Private Sub AppFolderGenerator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtSourceLocation.Text = GetDocLocation()
-
-
 
     End Sub
 
@@ -98,9 +98,6 @@ Public Class AppFolderGenerator
         End Try
     End Sub
 
-
-
-
     Private Sub BtnAbout_Click(sender As Object, e As EventArgs) Handles BtnAbout.Click
         Try
             Using aboutbox As New AboutTFG()
@@ -111,4 +108,5 @@ Public Class AppFolderGenerator
             MessageBox.Show($"An error occurred while opening the About box: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
 End Class
