@@ -47,7 +47,7 @@ Partial Class AboutTFG
         LogoPictureBox.Margin = New Padding(4, 3, 4, 3)
         LogoPictureBox.Name = "LogoPictureBox"
         LogoPictureBox.Size = New Size(149, 286)
-        LogoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
+        LogoPictureBox.SizeMode = PictureBoxSizeMode.CenterImage
         LogoPictureBox.TabIndex = 0
         LogoPictureBox.TabStop = False
         ' 
@@ -174,6 +174,7 @@ Partial Class AboutTFG
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        BackgroundImageLayout = ImageLayout.Zoom
         CancelButton = OKButton
         ClientSize = New Size(458, 329)
         Controls.Add(Panel1)

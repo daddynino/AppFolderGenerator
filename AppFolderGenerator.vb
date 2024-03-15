@@ -1,7 +1,8 @@
 ﻿Imports System.IO
 
 Public Class AppFolderGenerator
-
+    Dim dragging As Boolean
+    Dim startPoint As Point
     Private Sub AppFolderGenerator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtSourceLocation.Text = GetDocLocation()
         Me.LblVersion.Text = String.Format("Ver: {0}", My.Application.Info.Version.ToString)
@@ -101,5 +102,65 @@ Public Class AppFolderGenerator
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles LblXToClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub AppFolderGenerator_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
+        If e.Button = MouseButtons.Left Then
+            dragging = True
+            startPoint = New Point(e.X, e.Y)
+        End If
+    End Sub
+
+    Private Sub AppFolderGenerator_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
+        If dragging Then
+            Dim p As Point = Me.PointToScreen(New Point(e.X, e.Y))
+            Me.Location = New Point(p.X - startPoint.X, p.Y - startPoint.Y)
+        End If
+    End Sub
+
+    Private Sub AppFolderGenerator_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
+        If e.Button = MouseButtons.Left Then
+            dragging = False
+        End If
+    End Sub
+
+    Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel2.MouseDown
+        If e.Button = MouseButtons.Left Then
+            dragging = True
+            startPoint = New Point(e.X, e.Y)
+        End If
+    End Sub
+
+    Private Sub Panel2_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel2.MouseMove
+        If dragging Then
+            Dim p As Point = Me.PointToScreen(New Point(e.X, e.Y))
+            Me.Location = New Point(p.X - startPoint.X, p.Y - startPoint.Y)
+        End If
+    End Sub
+
+    Private Sub Panel2_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel2.MouseUp
+        If e.Button = MouseButtons.Left Then
+            dragging = False
+        End If
+    End Sub
+
+    Private Sub LblTitle_MouseDown(sender As Object, e As MouseEventArgs) Handles LblTitle.MouseDown
+        If e.Button = MouseButtons.Left Then
+            dragging = True
+            startPoint = New Point(e.X, e.Y)
+        End If
+    End Sub
+
+    Private Sub LblTitle_MouseMove(sender As Object, e As MouseEventArgs) Handles LblTitle.MouseMove
+        If dragging Then
+            Dim p As Point = Me.PointToScreen(New Point(e.X, e.Y))
+            Me.Location = New Point(p.X - startPoint.X, p.Y - startPoint.Y)
+        End If
+    End Sub
+
+    Private Sub LblTitle_MouseUp(sender As Object, e As MouseEventArgs) Handles LblTitle.MouseUp
+        If e.Button = MouseButtons.Left Then
+            dragging = False
+        End If
     End Sub
 End Class

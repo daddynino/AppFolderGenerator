@@ -18,8 +18,8 @@ Generates subfolders in a chosen repo folder.</Description>
     <RepositoryUrl>https://github.com/daddynino/AppFolderGenerator</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <AssemblyVersion>24.3.15.38</AssemblyVersion>
-    <FileVersion>24.3.15.38</FileVersion>
+    <AssemblyVersion>24.3.15.46</AssemblyVersion>
+    <FileVersion>24.3.15.46</FileVersion>
     <ApplicationIcon>Icons\Opened Folder.ico</ApplicationIcon>
     <PackageIcon>Opened Folder.png</PackageIcon>
     <AnalysisLevel>preview-all</AnalysisLevel>
@@ -51,6 +51,19 @@ Generates subfolders in a chosen repo folder.</Description>
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
