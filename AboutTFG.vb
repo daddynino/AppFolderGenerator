@@ -1,29 +1,22 @@
 ﻿Public NotInheritable Class AboutTFG
-
+    Const AppTitle = "App Folder Generator"
+    Const Description = "Generates subfolders in a chosen repo folder"
     Private Sub AboutTFG_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' Set the title of the form.
-        Dim ApplicationTitle As String
-        If My.Application.Info.Title <> "" Then
-            ApplicationTitle = "App Folder Generator" 'My.Application.Info.Title
-        Else
-            ApplicationTitle = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
-        End If
-        Me.Text = String.Format("About {0}", ApplicationTitle)
-        ' Initialize all of the text displayed on the About Box.
-        ' TODO: Customize the application's assembly information in the "Application" pane of the project 
-        '    properties dialog (under the "Project" menu).
-        Me.LabelProductName.Text = "App Folder Generator" ' My.Application.Info.ProductName
-        Me.LabelVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
-        Me.LabelCopyright.Text = "© 2024 Neil Saunders" ' & My.Application.Info.Copyright
-        Me.LabelCompanyName.Text = "" '"N/A" 'My.Application.Info.CompanyName
-        Me.TextBoxDescription.Text = My.Application.Info.Description
+        Me.Text = String.Format("About {0}", AppTitle)
+
+        Me.TxtProductName.Text = AppTitle
+        Me.TxtVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
+        Me.TxtCopyright.Text = "© 2024 Neil Saunders"
+        Me.TextBoxDescription.Text = "What it does..." & vbCrLf & vbCrLf & Description
     End Sub
 
     Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKButton.Click
         Me.Close()
     End Sub
 
-    'Private Sub TextBoxDescription_TextChanged(sender As Object, e As EventArgs) Handles TextBoxDescription.TextChanged
+    Private Sub LblXToClose_Click(sender As Object, e As EventArgs) Handles LblXToClose.Click
+        Me.Close()
+    End Sub
 
-    'End Sub
 End Class

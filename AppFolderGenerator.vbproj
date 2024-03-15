@@ -8,7 +8,9 @@
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <Authors>Neil Saunders</Authors>
-    <Description>Quickly generate subfolders for new app development</Description>
+    <Description>What it does...
+
+Generates subfolders in a chosen repo folder.</Description>
     <Title>App Folder Generator</Title>
     <Version>1.1.0</Version>
     <Product>App Folder Generator</Product>
@@ -16,8 +18,8 @@
     <RepositoryUrl>https://github.com/daddynino/AppFolderGenerator</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <AssemblyVersion>24.3.15.22</AssemblyVersion>
-    <FileVersion>24.3.15.22</FileVersion>
+    <AssemblyVersion>24.3.15.38</AssemblyVersion>
+    <FileVersion>24.3.15.38</FileVersion>
     <ApplicationIcon>Icons\Opened Folder.ico</ApplicationIcon>
     <PackageIcon>Opened Folder.png</PackageIcon>
     <AnalysisLevel>preview-all</AnalysisLevel>
