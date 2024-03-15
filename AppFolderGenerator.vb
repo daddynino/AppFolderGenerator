@@ -4,7 +4,7 @@ Public Class AppFolderGenerator
 
     Private Sub AppFolderGenerator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtSourceLocation.Text = GetDocLocation()
-
+        Me.LblVersion.Text = String.Format("Ver: {0}", My.Application.Info.Version.ToString)
     End Sub
 
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
@@ -45,58 +45,47 @@ Public Class AppFolderGenerator
 
     Private Sub BtnSelectSource_Click(sender As Object, e As EventArgs) Handles BtnSelectSource.Click
         Try
-            Using frm As New OpenFolderDialog()
+            Using frm As New FolderBrowserDialog
                 If frm.ShowDialog(Me) = DialogResult.OK Then
                     'MessageBox.Show(Me, frm.Folder)
-                    TxtSourceLocation.Text = frm.Folder
+                    TxtSourceLocation.Text = frm.SelectedPath
                 End If
             End Using
         Catch ex As Exception
             ' Handle the exception (display an error message, log the error, etc.)
             MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Throw
         End Try
     End Sub
 
     Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles BtnGenerate.Click
-        Dim FullPath = TxtSourceLocation.Text
+        Dim fullpath = TxtSourceLocation.Text
 
         ' Check if FullPath is a valid path
-        If String.IsNullOrWhiteSpace(FullPath) OrElse Not IO.Path.IsPathRooted(FullPath) Then
+        If String.IsNullOrWhiteSpace(fullpath) OrElse Not Path.IsPathRooted(fullpath) Then
             MessageBox.Show("Invalid path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
         Try
-            ' Check if the directories already exist
-            If Not Directory.Exists(FullPath & "\Data") Then
-                IO.Directory.CreateDirectory(FullPath & "\Data")
-            End If
+            ' List of folders to create
+            Dim foldersToCreate As String() = {"Backup", "Config", "Data", "Docs", "Forms", "Icons", "Images", "Libraries", "Modules", "SrcFiles"}
 
-            If Not Directory.Exists(FullPath & "\Forms") Then
-                IO.Directory.CreateDirectory(FullPath & "\Forms")
-            End If
+            ' Create each folder if it doesn't exist
+            For Each folderName In foldersToCreate
+                Dim folderPath = Path.Combine(fullpath, folderName)
+                If Not Directory.Exists(folderPath) Then
+                    Directory.CreateDirectory(folderPath)
+                End If
+            Next
 
-            If Not Directory.Exists(FullPath & "\Icons") Then
-                IO.Directory.CreateDirectory(FullPath & "\Icons")
-            End If
-
-            If Not Directory.Exists(FullPath & "\Images") Then
-                IO.Directory.CreateDirectory(FullPath & "\Images")
-            End If
-
-            If Not Directory.Exists(FullPath & "\Modules") Then
-                IO.Directory.CreateDirectory(FullPath & "\Modules")
-            End If
-
-            If Not Directory.Exists(FullPath & "\SrcFiles") Then
-                IO.Directory.CreateDirectory(FullPath & "\SrcFiles")
-            End If
-
-            MessageBox.Show("Folders created successfully." & vbCrLf & "You're now ready to start developing in " & FullPath, "Success")
+            MessageBox.Show("Folders created successfully." & vbCrLf & "You're now ready to start developing in " & fullpath, "Success")
         Catch ex As Exception
             MessageBox.Show("Error creating folders: " & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Throw
         End Try
     End Sub
+
 
     Private Sub BtnAbout_Click(sender As Object, e As EventArgs) Handles BtnAbout.Click
         Try
@@ -106,7 +95,11 @@ Public Class AppFolderGenerator
         Catch ex As Exception
             ' Handle unexpected errors
             MessageBox.Show($"An error occurred while opening the About box: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Throw
         End Try
     End Sub
 
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles LblXToClose.Click
+        Me.Close()
+    End Sub
 End Class

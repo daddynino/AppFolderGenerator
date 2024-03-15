@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net5.0-windows7.0</TargetFramework>
     <RootNamespace>AppFolderGenerator</RootNamespace>
     <StartupObject>AppFolderGenerator.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
@@ -16,15 +16,26 @@
     <RepositoryUrl>https://github.com/daddynino/AppFolderGenerator</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyVersion>24.3.15.22</AssemblyVersion>
+    <FileVersion>24.3.15.22</FileVersion>
+    <ApplicationIcon>Icons\Opened Folder.ico</ApplicationIcon>
+    <PackageIcon>Opened Folder.png</PackageIcon>
+    <AnalysisLevel>preview-all</AnalysisLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>none</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>none</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Icons\Opened Folder.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Import Include="System.Data" />
@@ -41,6 +52,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Icons\Opened Folder.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
