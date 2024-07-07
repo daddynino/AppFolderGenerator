@@ -20,7 +20,7 @@ Generates subfolders in a chosen repo folder.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
     <AssemblyVersion>1.24.7</AssemblyVersion>
     <FileVersion>1.24.7</FileVersion>
-    <ApplicationIcon>Icons\Opened Folder.ico</ApplicationIcon>
+    <ApplicationIcon></ApplicationIcon>
     <PackageIcon></PackageIcon>
     <AnalysisLevel>latest-minimum</AnalysisLevel>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
@@ -36,10 +36,6 @@ Generates subfolders in a chosen repo folder.</Description>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="Icons\Opened Folder.ico" />
-  </ItemGroup>
 
   <ItemGroup>
     <Import Include="System.Data" />
@@ -69,10 +65,6 @@ Generates subfolders in a chosen repo folder.</Description>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Icons\Opened Folder.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
     <None Update="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
