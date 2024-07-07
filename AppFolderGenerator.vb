@@ -70,7 +70,7 @@ Public Class AppFolderGenerator
 
         Try
             ' List of folders to create
-            Dim foldersToCreate As String() = {"Backup", "Config", "Data", "Docs", "Forms", "Icons", "Images", "Libraries", "Modules", "SrcFiles"}
+            Dim foldersToCreate As String() = {"Backup", "Config", "Data", "Docs", "Forms", "Icons", "Images", "Libs", "Modules", "SrcFiles"}
 
             ' Create each folder if it doesn't exist
             For Each folderName In foldersToCreate
@@ -90,7 +90,7 @@ Public Class AppFolderGenerator
 
     Private Sub BtnAbout_Click(sender As Object, e As EventArgs) Handles BtnAbout.Click
         Try
-            Using aboutbox As New AboutTFG()
+            Using aboutbox As New AboutAFG()
                 aboutbox.ShowDialog()
             End Using
         Catch ex As Exception

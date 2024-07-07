@@ -1,4 +1,4 @@
-﻿Public NotInheritable Class AboutTFG
+﻿Public NotInheritable Class AboutAFG
 
     Dim dragging As Boolean
     Dim startPoint As Point
