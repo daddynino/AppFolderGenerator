@@ -23,7 +23,7 @@ Generates subfolders in a chosen repo folder.</Description>
     <ApplicationIcon></ApplicationIcon>
     <PackageIcon></PackageIcon>
     <AnalysisLevel>latest-minimum</AnalysisLevel>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
     <OptionStrict>On</OptionStrict>
   </PropertyGroup>
 
