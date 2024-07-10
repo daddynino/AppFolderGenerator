@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
     <RootNamespace>AppFolderGenerator</RootNamespace>
     <StartupObject>AppFolderGenerator.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
@@ -23,7 +23,6 @@ Generates subfolders in a chosen repo folder.</Description>
     <ApplicationIcon></ApplicationIcon>
     <PackageIcon></PackageIcon>
     <AnalysisLevel>latest-minimum</AnalysisLevel>
-    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
     <OptionStrict>On</OptionStrict>
   </PropertyGroup>
 
