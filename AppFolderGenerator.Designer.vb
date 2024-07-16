@@ -163,7 +163,7 @@ Partial Class AppFolderGenerator
         LblXToClose.AutoSize = True
         LblXToClose.Font = New Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LblXToClose.ForeColor = Color.White
-        LblXToClose.Location = New Point(369, 9)
+        LblXToClose.Location = New Point(358, 10)
         LblXToClose.Name = "LblXToClose"
         LblXToClose.Size = New Size(24, 24)
         LblXToClose.TabIndex = 1
