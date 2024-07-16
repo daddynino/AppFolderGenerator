@@ -155,7 +155,7 @@ Partial Class AppFolderGenerator
         Panel2.Dock = DockStyle.Top
         Panel2.Location = New Point(0, 0)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(396, 43)
+        Panel2.Size = New Size(388, 43)
         Panel2.TabIndex = 11
         ' 
         ' LblXToClose
@@ -187,8 +187,8 @@ Partial Class AppFolderGenerator
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
-        BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(396, 265)
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(388, 265)
         Controls.Add(LblVersion)
         Controls.Add(Panel2)
         Controls.Add(BtnExit)
