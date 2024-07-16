@@ -22,14 +22,10 @@ Public Class AppFolderGenerator
                 Return myDocumentsPath
             Else
                 ' If the directory doesn't exist, handle the error appropriately
-                Console.WriteLine("Error: My Documents folder does not exist.")
-                ' You might want to log this error or take other appropriate actions
                 Return String.Empty ' Or throw an exception, depending on your requirements
             End If
         Catch ex As Exception
             ' Handle any other exceptions that might occur
-            Console.WriteLine("An error occurred: " & ex.Message)
-            ' You might want to log this error or take other appropriate actions
             Return String.Empty ' Or throw an exception, depending on your requirements
         End Try
     End Function
@@ -60,31 +56,7 @@ Public Class AppFolderGenerator
     End Sub
 
     Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles BtnGenerate.Click
-        Dim fullpath = TxtSourceLocation.Text
-
-        ' Check if FullPath is a valid path
-        If String.IsNullOrWhiteSpace(fullpath) OrElse Not Path.IsPathRooted(fullpath) Then
-            MessageBox.Show("Invalid path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
-
-        Try
-            ' List of folders to create
-            Dim foldersToCreate As String() = {"Backup", "Config", "Data", "Docs", "Forms", "Icons", "Images", "Libs", "Modules", "SrcFiles"}
-
-            ' Create each folder if it doesn't exist
-            For Each folderName In foldersToCreate
-                Dim folderPath = Path.Combine(fullpath, folderName)
-                If Not Directory.Exists(folderPath) Then
-                    Directory.CreateDirectory(folderPath)
-                End If
-            Next
-
-            MessageBox.Show("Folders created successfully." & vbCrLf & "You're now ready to start developing in " & fullpath, "Success")
-        Catch ex As Exception
-            MessageBox.Show("Error creating folders: " & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Throw
-        End Try
+        GenerateFolders
     End Sub
 
 
@@ -162,5 +134,33 @@ Public Class AppFolderGenerator
         If e.Button = MouseButtons.Left Then
             dragging = False
         End If
+    End Sub
+
+    Private Sub GenerateFolders()
+        Dim fullpath = TxtSourceLocation.Text
+
+        ' Check if FullPath is a valid path
+        If String.IsNullOrWhiteSpace(fullpath) OrElse Not Path.IsPathRooted(fullpath) Then
+            MessageBox.Show("Invalid path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Try
+            ' List of folders to create
+            Dim foldersToCreate As String() = {"Backup", "Config", "Data", "Docs", "Forms", "Icons", "Images", "Libs", "Modules", "SrcFiles"}
+
+            ' Create each folder if it doesn't exist
+            For Each folderName In foldersToCreate
+                Dim folderPath = Path.Combine(fullpath, folderName)
+                If Not Directory.Exists(folderPath) Then
+                    Directory.CreateDirectory(folderPath)
+                End If
+            Next
+
+            MessageBox.Show("Folders created successfully." & vbCrLf & "You're now ready to start developing in " & fullpath, "Success")
+        Catch ex As Exception
+            MessageBox.Show("Error creating folders: " & vbCrLf & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Throw
+        End Try
     End Sub
 End Class

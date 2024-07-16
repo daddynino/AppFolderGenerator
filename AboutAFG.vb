@@ -15,8 +15,8 @@
         Me.TextBoxDescription.Text = "What it does..." & vbCrLf & vbCrLf & Description
     End Sub
 
-    Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKButton.Click
-        Me.Close()
+    Private Sub OKButton_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Close()
     End Sub
 
     Private Sub LblXToClose_Click(sender As Object, e As EventArgs) Handles LblXToClose.Click
@@ -60,5 +60,9 @@
         If e.Button = MouseButtons.Left Then
             dragging = False
         End If
+    End Sub
+
+    Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
+        Me.Close()
     End Sub
 End Class
