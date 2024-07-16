@@ -200,6 +200,7 @@ Partial Class AppFolderGenerator
         Controls.Add(BtnSelectSource)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
         Name = "AppFolderGenerator"
         StartPosition = FormStartPosition.CenterScreen
