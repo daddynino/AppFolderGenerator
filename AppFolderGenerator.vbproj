@@ -21,7 +21,7 @@ Generates subfolders in a chosen repo folder.</Description>
     <AssemblyVersion>1.24.7.1</AssemblyVersion>
     <FileVersion>1.24.7.1</FileVersion>
     <ApplicationIcon></ApplicationIcon>
-    <PackageIcon>folder-2-256 (1).png</PackageIcon>
+    <PackageIcon>letter-a_9278842.png</PackageIcon>
     <AnalysisLevel>latest-minimum</AnalysisLevel>
     <OptionStrict>On</OptionStrict>
   </PropertyGroup>
@@ -65,6 +65,10 @@ Generates subfolders in a chosen repo folder.</Description>
 
   <ItemGroup>
     <None Update="Icons\folder-2-256 %281%29.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Icons\letter-a_9278842.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
