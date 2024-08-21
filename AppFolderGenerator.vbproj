@@ -20,8 +20,8 @@ Generates subfolders in a chosen repo folder.</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
     <AssemblyVersion>1.24.7.1</AssemblyVersion>
     <FileVersion>1.24.7.1</FileVersion>
-    <ApplicationIcon></ApplicationIcon>
-    <PackageIcon>letter-a_9278842.png</PackageIcon>
+    <ApplicationIcon>Icons\letter_a_9278842_DOg_icon.ico</ApplicationIcon>
+    <PackageIcon>Icons\letter-a_9278842.png</PackageIcon>
     <AnalysisLevel>latest-minimum</AnalysisLevel>
     <OptionStrict>On</OptionStrict>
   </PropertyGroup>
@@ -35,6 +35,10 @@ Generates subfolders in a chosen repo folder.</Description>
     <DebugType>none</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Icons\letter_a_9278842_DOg_icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Import Include="System.Data" />
